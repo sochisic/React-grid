@@ -3,3 +3,7 @@ body {
   padding: 0px;
   font-family: sans-serif;
 }
+
+.react-grid-Cell:nth-child(2), .react-grid-Cell:nth-child(3) {
+  cursor: pointer;
+}

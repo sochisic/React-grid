@@ -26,11 +26,14 @@ const customStyles = {
     },
 };
 
+Modal.setAppElement('#root');
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.rowGetter = this.rowGetter.bind(this);
         this.columns = [
             {
                 key: 'id',
@@ -73,7 +76,7 @@ class App extends Component {
     }
     state = {
         loading: false,
-        users: false,
+        users: [],
         modalIsOpen: false,
         modalId: 0,
     };
@@ -99,7 +102,9 @@ class App extends Component {
         }).then(resp => this.setState({ users: resp.data }));
     }
 
-    rowGetter = i => this.state.users[i];
+    rowGetter(i) {
+        return this.state.users[i];
+    }
 
     render() {
         const { modalId } = this.state;
@@ -108,7 +113,6 @@ class App extends Component {
             <div className="App">
                 <Modal
                     isOpen={this.state.modalIsOpen}
-                    onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                     style={customStyles}
                     contentLabel="Row Modal">
@@ -124,7 +128,7 @@ class App extends Component {
                     <h2>Welcome to Grid Challange</h2>
                 </div>
                 <div className="container">
-                    {this.state.users ? (
+                    {this.state.users.length > 0 ? (
                         <ReactDataGrid
                             columns={this.columns}
                             rowGetter={this.rowGetter}
@@ -138,6 +142,7 @@ class App extends Component {
             </div>
         );
     }
+
 }
 
 export default withStyles(styles)(App);
