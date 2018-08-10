@@ -8,7 +8,7 @@ const HOST = "localhost";
 
 app.use(cors({
   allowedOrigins: [
-    'localhost', 'http://localhost:9000',
+    'http://localhost:9000',
   ]
 }));
 
