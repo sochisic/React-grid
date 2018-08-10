@@ -46,6 +46,9 @@ class App extends Component {
                 name: 'ID',
                 resizable: true,
                 width: 40,
+                events: {
+                    onClick: this.openModal,
+                },
             },
             {
                 key: 'first_name',
@@ -67,16 +70,25 @@ class App extends Component {
                 key: 'email',
                 name: 'Email',
                 resizable: true,
+                events: {
+                    onClick: this.openModal,
+                },
             },
             {
                 key: 'gender',
                 name: 'Gender',
                 resizable: true,
+                events: {
+                    onClick: this.openModal,
+                },
             },
             {
                 key: 'company',
                 name: 'Company',
                 resizable: true,
+                events: {
+                    onClick: this.openModal,
+                },
             },
         ];
     }
