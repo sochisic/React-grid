@@ -35,7 +35,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "api": "node apiclients/apiclients.js",
+    "api": "node api/index.js",
     "start": "node scripts/start.js",
     "build": "set NODE_ENV=production&&set BABEL_ENV=production&& rm -rf ./build && webpack --env.production --optimize-minimize",
     "demo": "npm run start | npm run api"
