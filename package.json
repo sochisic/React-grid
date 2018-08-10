@@ -1,5 +1,5 @@
 {
-  "name": "React-grid",
+  "name": "react-grid",
   "dependencies": {
     "@material-ui/core": "^1.4.3",
     "axios": "^0.18.0",
@@ -35,6 +35,6 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "set NODE_ENV=production&&set BABEL_ENV=production&& rm -rf ./build && webpack --env.production --optimize-minimize",
+    "build": "set NODE_ENV=production&&set BABEL_ENV=production&& rm -rf ./build && webpack --env.production --optimize-minimize"
   }
 }
