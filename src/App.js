@@ -34,6 +34,12 @@ class App extends Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.rowGetter = this.rowGetter.bind(this);
+        this.state = {
+            loading: false,
+            users: [],
+            modalIsOpen: false,
+            modalId: 0,
+        };
         this.columns = [
             {
                 key: 'id',
@@ -74,12 +80,6 @@ class App extends Component {
             },
         ];
     }
-    state = {
-        loading: false,
-        users: [],
-        modalIsOpen: false,
-        modalId: 0,
-    };
 
     openModal(e, args) {
         this.setState({
